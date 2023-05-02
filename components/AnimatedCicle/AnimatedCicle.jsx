@@ -32,7 +32,6 @@ function AnimatedCicle(props) {
     handleScreenInformation();
     window.addEventListener("scroll", handleScreenInformation);
     window.addEventListener("resize", handleScreenInformation);
-    console.log(window.innerWidth);
     return () => {
       window.removeEventListener("scroll", handleScreenInformation);
       window.removeEventListener("resize", handleScreenInformation);
@@ -48,6 +47,7 @@ function AnimatedCicle(props) {
       <div className="circulo-central"></div>
       {itensMiniCicle?.map((item, index, arr) => (
         <MiniCiclesContent
+          key={index}
           index={index}
           length={arr.length}
           item={item}
@@ -93,8 +93,6 @@ const MiniCiclesContent = (props) => {
       ? (screenInformation.size.width - 1440) / 2 + "px"
       : 0;
   const handleMobile = screenInformation.size.width <= 1200;
-  console.log(props.menuMobileStatus);
-  console.log(handleMobile);
   const styles = {
     ForStatic: {
       left: `calc(50% - ${size / 2}px)`,
@@ -109,7 +107,6 @@ const MiniCiclesContent = (props) => {
             width: "100vw",
           }
         : {
- 
             left: "-100%",
           }
       : validateActualPage
@@ -149,7 +146,9 @@ const MiniCiclesContent = (props) => {
         <h2>{props.item?.icon}</h2>
         <h1
           className={`text-for-menu`}
-          style={{ display: validateActualPage || handleMenu ? "flex" : "none" }}
+          style={{
+            display: validateActualPage || handleMenu ? "flex" : "none",
+          }}
         >
           {props.item?.text?.toUpperCase()}
         </h1>

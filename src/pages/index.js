@@ -53,8 +53,6 @@ export default function Home() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             data-supported-dps="24x24"
-            fill="currentColor"
-            class="mercado-match"
             width="50"
             height="50"
             focusable="false"

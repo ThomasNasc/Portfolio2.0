@@ -6,8 +6,8 @@ function Projects(props) {
   return (
     <div className="page-projects">
       <div className="projects">
-        {projetos.map((project) => (
-          <ProjectItem project={project} />
+        {projetos.map((project, index) => (
+          <ProjectItem  key={index} project={project} />
         ))}
       </div>
     </div>

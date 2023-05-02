@@ -19,6 +19,7 @@ function ProjectItem(props) {
       <div className="container">
         {ProjectInfo.src.map((item, index) => (
           <img
+            key={index}
             width={110}
             height={55}
             src={ProjectInfo.src[index]}
@@ -31,9 +32,10 @@ function ProjectItem(props) {
         ))}
       </div>
       <h3>{ProjectInfo.nome.toUpperCase()}</h3>
-      <div div className="container">
-        {ProjectInfo.skills.map((icon) => (
+      <div className="container">
+        {ProjectInfo.skills.map((icon, index) => (
           <Image
+            key={index}
             width={30}
             height={30}
             src={icon}

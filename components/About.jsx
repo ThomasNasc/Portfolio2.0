@@ -8,8 +8,8 @@ function About(props) {
       <section className="about-section-resume">
         <div className="about-section">
           <h2>FORMAÇÃO</h2>
-          {dados.formacao.map((item) => (
-            <div className="about-section-item">
+          {dados.formacao.map((item, index) => (
+            <div key={index} className="about-section-item">
               <p className="text-format title">{item.curso}</p>
               <p className="text-format subtitle">{item.escola}</p>
               <p className="text-format content-text">{item.periodo}</p>
@@ -18,19 +18,21 @@ function About(props) {
         </div>
         <div className="about-section">
           <h2>EXPERIÊNCIA</h2>
-          {dados.experiencia.map((item) => (
-            <div className="about-section-item">
+          {dados.experiencia.map((item, index) => (
+            <div key={index} className="about-section-item">
               <h4 className="title">{item.cargo}</h4>
               <p className="subtitle">{item.empresa}</p>
               <p className="subtitle">{item.periodo}</p>
               <h5>ATRIBUIÇÕES</h5>
-              {item.atribuicoes.map((atribuicao) => (
-                <p className="subtitle">-{atribuicao}</p>
+              {item.atribuicoes.map((atribuicao, index) => (
+                <p key={index} className="subtitle">-{atribuicao}</p>
               ))}
               <h5>TECNOLOGIAS UTILIZADAS</h5>
               <div className="subtitle container-technologies">
-                {item.tecnologias.map((tecnologia) => (
-                  <p className="technologie">{tecnologia}</p>
+                {item.tecnologias.map((tecnologia, index) => (
+                  <p key={index} className="technologie">
+                    {tecnologia}
+                  </p>
                 ))}
               </div>
             </div>
@@ -44,8 +46,8 @@ function About(props) {
         </p>
       </section>
       <a href="/Thomas do Nascimento Rosa - 2023.pdf" download>
-              DOWNLOAD CURRICULO
-            </a>
+        DOWNLOAD CURRICULO
+      </a>
     </div>
   );
 }
