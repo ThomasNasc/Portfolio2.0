@@ -1,0 +1,33 @@
+{
+  "formacao": [
+    {
+      "curso": "TECNOLOGIA EM MECATRÔNICA INDUSTRIAL",
+      "periodo": " De 08/2016 a 06/2019",
+      "escola": "Faculdades Metropolitanas Unidas - FMU - Tecnólogo"
+    },
+    {
+      "curso": "TÉCNICO EM ELETRÔNICA",
+      "periodo": "De 08/2014 a 06/2016",
+      "escola": "Escola Técnica Estadual Getúlio Vargas - Técnico"
+    },
+    {
+      "curso": "DESENVOLVIMENTO EM FRONT END - HTML, CSS E JAVASCRIPT",
+      "periodo": "De 07/2021 a 09/2021",
+      "escola": "Senai Escola de Informática"
+    }
+  ],
+  "experiencia": [
+    {
+      "empresa": "INTELITRADER TECNOLOGIA",
+      "cargo": " Desenvolvedor Full-Stack",
+      "periodo": "06/2022 a 04/2023",
+      "atribuicoes": [
+        "Oferecer soluções para as apliações de forma a atender a demanda exigida",
+        "Atuar com metodologia ágil",
+        "DevOps"
+      ],
+      "tecnologias": ["Asp.Net", "C#", "Azure", "React", "TypeScript", "SQL"]
+    }
+  ],
+  "resumo": "Me chamo Thomas do Nascimento e sou desenvolvedor front-end e apaixonado por tecnologia desde pequeno. Decidi, aos meus 16 anos, que iria entrar na área iniciando meus estudos como Técnico em eletrônica, formado pela ETEC Getúlio Vargas.Permaneci me aprimorando e cursei Tecnologia em Mecatrônica Industrial, por meio de bolsa de estudos pela que obtive junto às Faculdades Metropolitanas Unidas - FMU. Tomei esta decisão pois sempre gostei de ideias que tornassem a vida das pessoas, e a minha, mais fáceis, especialmente por meio da automação, segmento o qual possuo grande apreço.Percebi que através da programação a tarefa de automatizar processos ou criar interfaces de usuários que sejam mais práticas e acessíveis se tornava mais palpável e real, portanto escolhi a categoria de front-end uma vez que é mais próxima ao design de interface e uma forma de estímulo à criatividade trabalhando, me permitindo trabalhar utilizando a lógica de programação, razão pela qual me certifiquei junto ao SENAI como desenvolvedor Front-End."
+}

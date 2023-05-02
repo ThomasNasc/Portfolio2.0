@@ -1,0 +1,66 @@
+.circulo-animado {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circulo-central {
+  width: 50%;
+  height: 50%;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+.circulos-mini {
+  width: 20%;
+  height: 20%;
+  border: 2px solid red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-mini-cicles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.circulos-mini-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+}
+.circulos-mini-content :first-child {
+  width: 100%;
+  height: 100%;
+}
+
+.mini-circulos-static {
+  position: absolute;
+
+}
+
+.mini-circulos-menu {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+  .button-menu {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+  }
+
+}

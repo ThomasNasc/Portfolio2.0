@@ -1,0 +1,31 @@
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.project {
+  border: 1px solid blue;
+  width: 340px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.project-img {
+  border: 1px solid blue;
+}
+.project-mini-img {
+  margin-right: 10px;
+}
+.container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.icon-technologie {
+  margin-right: 10px;
+}
