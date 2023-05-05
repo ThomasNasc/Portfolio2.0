@@ -82,7 +82,7 @@ const MiniCiclesContent = (props) => {
   const deg = (maxDeg / length) * props.index + initialDeg;
   const activeMenuInteraction = deg < 0 && menuStaticActive;
 
-  const [getActualPage, SetgetActualPage] = useState(0);
+  const [getActualPage, SetgetActualPage] = useState(3);
   useEffect(() => {
     if (activeMenuInteraction) {
       if (
