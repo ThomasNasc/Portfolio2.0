@@ -2,7 +2,8 @@
 .projects {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 100px;
 }
 .project {
   border: 1px solid blue;
@@ -13,6 +14,7 @@
   padding: 10px;
   margin-bottom: 20px;
   margin-right: 20px;
+
 }
 .project-img {
   border: 1px solid blue;
