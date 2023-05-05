@@ -26,6 +26,7 @@
 .about-section-description {
   margin: 20px;
   font-size: 12px;
+  max-width: 500px;
 }
 .about-photo {
   width: 150px;

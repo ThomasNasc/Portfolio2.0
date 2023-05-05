@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Head from "next/head";
-import Image from "next/image";
 
 function AnimatedCicle(props) {
   const sizeContainer = props.size ?? 600;
@@ -69,6 +67,7 @@ const MiniCiclesContent = (props) => {
     screenInformation,
     menuStaticActive,
     handleMenu,
+    Yposition,
   ] = [
     props.length,
     props.maxDeg ?? 360,
@@ -77,16 +76,35 @@ const MiniCiclesContent = (props) => {
     props.screenInformation,
     props.menuStatic,
     props.menuMobileStatus,
+    props.Yposition ?? [0, 0, 0],
   ];
 
   const deg = (maxDeg / length) * props.index + initialDeg;
   const activeMenuInteraction = deg < 0 && menuStaticActive;
 
-  const getActualPage = Math.round(
-    screenInformation.scroll / screenInformation.size.height
-  );
+  const [getActualPage, SetgetActualPage] = useState(0);
+  useEffect(() => {
+    if (activeMenuInteraction) {
+      if (
+        Yposition[0] <= screenInformation.scroll + 300 &&
+        screenInformation.scroll + 300 <= Yposition[1]
+      ) {
+        SetgetActualPage(2);
+      } else if (
+        Yposition[1] <= screenInformation.scroll + 300 &&
+        screenInformation.scroll + 300 <= Yposition[2]
+      ) {
+        SetgetActualPage(1);
+      } else if (screenInformation.scroll + 300 >= Yposition[2]) {
+        SetgetActualPage(0);
+      } else {
+        SetgetActualPage(3);
+      }
+    }
+  }, [screenInformation.scroll]);
+
   const validateActualPage =
-    getActualPage === length - props.index - 1 && getActualPage > 0;
+    getActualPage === props.index && getActualPage != 3;
 
   const leftForBigScreen =
     screenInformation.size.width >= 1440
@@ -99,24 +117,27 @@ const MiniCiclesContent = (props) => {
       transform: `rotate(${deg}deg)`,
       transformOrigin: `${size / 2}px`,
     },
-    ForMenu: handleMobile
-      ? handleMenu
-        ? {
-            top: `calc(60% - ${70 * props.index}px)`,
-            left: "0px",
-            width: "100vw",
-          }
-        : {
-            left: "-100%",
-          }
-      : validateActualPage
+    ForMenu: validateActualPage
       ? {
-          top: "50px",
-          width: "400px",
+          bottom: "none",
+          width: "100%",
+          maxWidth: "400px",
+          height: "75px",
+          transition: "1s",
           left: leftForBigScreen,
+          right: "none",
+          top: "50px",
+        }
+      : handleMobile
+      ? {
+          width: "25%",
+          height: "50px",
+          right: `calc( 25% * ${props.index} )`,
+          bottom: "0px",
+          transition: "0.5s",
         }
       : {
-          top: `calc(60% - ${70 * props.index}px)`,
+          top: `calc(60% - ${100 * props.index}px)`,
           left: leftForBigScreen,
         },
   };
@@ -131,7 +152,7 @@ const MiniCiclesContent = (props) => {
 
   return (
     <div
-      className={`circulos-mini menu-for-mobile mini-circulos-${validateMenuActivation(
+      className={`circulos-mini mini-circulos-${validateMenuActivation(
         "menu",
         "static"
       )}`}

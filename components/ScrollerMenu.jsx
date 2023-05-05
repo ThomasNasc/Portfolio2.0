@@ -3,23 +3,23 @@ import AnimatedCicle from "./AnimatedCicle/AnimatedCicle";
 import { useEffect, useState } from "react";
 function ScrollerMenu(props) {
   const [scrollAmount, setScrollAmount] = useState(0);
-
   const [screenSize, setScreenSize] = useState({
     width: 600,
     height: 600,
   });
-  const [handleMenu, setHandleMenu] = useState(false);
   const handleScroll = () => {
     const amount = window?.scrollY;
     setScrollAmount(amount);
   };
   const handleResize = () => {
     setScreenSize({
-      width: 1000,
-      height: 1000,
+      width: window.innerWidth,
+      height: window.innerHeight,
     });
   };
+
   useEffect(() => {
+
     handleResize();
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
@@ -69,18 +69,12 @@ function ScrollerMenu(props) {
       },
     ],
     menuStatic: true,
-    menuMobileStatus: handleMenu,
+    Yposition: props.Yposition(),
   };
 
   return (
     <div>
       <AnimatedCicle {...propsMenu} />
-      <button
-        className="button-menu"
-        onClick={() => setHandleMenu(!handleMenu)}
-      >
-        MENU
-      </button>
     </div>
   );
 }

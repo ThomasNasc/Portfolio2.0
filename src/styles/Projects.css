@@ -2,7 +2,7 @@
 .projects {
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
 }
 .project {
   border: 1px solid blue;
@@ -17,12 +17,11 @@
 .project-img {
   border: 1px solid blue;
 }
-.project-mini-img {
-  margin-right: 10px;
-}
+
 .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
